@@ -6,9 +6,15 @@ function testPort($address)
     $host = $addressParts[0];
     $port = $addressParts[1];
 
-    $connection = fsockopen($host, $port);
-    $success = is_resource($connection);
-    fclose($connection);
+    $connection = @fsockopen($host, $port, $errNo, $errMsg, 1);
+    $accessible = is_resource($connection);
+    if ($accessible) fclose($connection);
 
-    return $success;
+    return $accessible;
+}
+
+function http_redirect($url, $permanent = false)
+{
+    header('Location: ' . $url, true, $permanent ? 301 : 302);
+    exit();
 }
