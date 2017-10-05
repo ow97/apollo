@@ -2,10 +2,7 @@
 include "../resources/lib.php";
 include "../resources/auth.php";
 
-echo $_SERVER["REQUEST_METHOD"];
-
-if ($_SERVER["REQUEST_METHOD"] = "POST") {
-    echo "post";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ((array_key_exists("username", $_REQUEST) && array_key_exists("password", $_REQUEST)) &&
         authPassword($_REQUEST["username"], $_REQUEST["password"])) {
         setcookie("username", $_REQUEST["username"]);
@@ -23,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] = "POST") {
         include "../resources/login.php";
     }
 } else {
-    echo "not";
     $failed = false;
     include "../resources/login.php";
 }

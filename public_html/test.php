@@ -1,6 +1,8 @@
 <?php
-foreach ($_REQUEST as $index => $item) {
-    echo "$index => $item";
-}
+//var_dump($_POST);
+//
+//echo $_SERVER["REQUEST_METHOD"];
 
-echo array_key_exists("redirect", $_REQUEST) ? urldecode($_REQUEST["redirect"]) : "index.php";
+echo urldecode(file_get_contents('php://input'));
+
+//phpinfo();

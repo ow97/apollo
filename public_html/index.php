@@ -1,41 +1,26 @@
 <?php include("../resources/header.php") ?>
 
-<script>
-    window.onload = function () {
-        testAllConnections();
-    };
-</script>
+<h1>Flat F Intranet</h1>
 
-<h1>Network Status</h1>
-<div class="w3-left-align w3-padding-large">
-  <table class="w3-table-all">
-    <col width="67%">
-    <col width="33%">
-    <tr class="w3-border-black">
-      <td>Service</td>
-      <td class="w3-center">Status</td>
-    </tr>
-      <?php
-      $tests = array(
-          "local"    => "Local web server",
-          "firewall" => "Firewall",
-          "gateway"  => "Gateway",
-          "dns"      => "DNS Server",
-          "google"   => "Google (Domain)",
-          "facebook" => "Facebook (Domain)",
-          "durham"   => "Durham homepage (Domain)",
-      );
+<h2>Shared expense claims</h2>
 
-      foreach ($tests as $test => $description) {
-          echo "<tr class=\"w3-hover-grey\">";
+<p>
+    <a href="https://docs.google.com/spreadsheets/d/1ESyxChpj4cGhwKlDlORrNRDlkENqPwYHmq5nVyAaMEc/edit?usp=sharing">
+        Minor expenses to be reimbursed via accrued balance
+    </a>
+</p>
+<p>
+    <a href="https://docs.google.com/spreadsheets/d/1yj3drNYQIs5L-s7lf0e6H8ehOJ1KanA9Zm23pMFBvWo/edit?usp=sharing">
+        Major expenses to be reimbursed expeditiously
+    </a>
+</p>
 
-          echo "<td>$description</td>";
-          echo "<td class=\"w3-center\"><span id=\"test_result_$test\">Testing...</span></td>";
+<h2>Network status</h2>
 
-          echo "</tr>";
-      }
-      ?>
-  </table>
-</div>
+<p>
+    <a href="status.php">
+        Network status report
+    </a>
+</p>
 
 <?php include("../resources/footer.php") ?>

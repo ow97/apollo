@@ -2,7 +2,7 @@
 
 <h1>Network Login</h1>
 <div class="w3-show-inline-block w3-col w3-padding-large" style="alignment: center">
-  <form action="login.php" method="post" class="w3-show-inline-block w3-cell" style="max-width: 500px">
+  <form name="login" action="test.php" method="POST" class="w3-show-inline-block w3-cell" style="max-width: 500px">
       <?= !array_key_exists("redirect", $_REQUEST) ? "" :
           "<input type=\"hidden\" name=\"redirect\" value=\"" . $_REQUEST["redirect"] . "\">" ?>
     <table class="w3-table w3-border">
