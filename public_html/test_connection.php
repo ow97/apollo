@@ -13,7 +13,9 @@ $tests = array(
 
 $address = $tests[$_REQUEST['test']];
 
-if (testPort($address)) {
+if (is_null($address)) {
+    echo "error";
+} else if (testPort($address)) {
     echo "up";
 } else {
     echo "down";
